@@ -1,0 +1,903 @@
+{
+    "odmVersion": "3.5.6",
+    "memory": {
+        "total": 40111,
+        "available": 39035
+    },
+    "cpus": 12,
+    "images": 227,
+    "options": {
+        "3d_tiles": false,
+        "align": null,
+        "auto_boundary": false,
+        "auto_boundary_distance": 0,
+        "bg_removal": false,
+        "boundary": {},
+        "build_overviews": false,
+        "camera_lens": "auto",
+        "cameras": {},
+        "cog": false,
+        "copy_to": null,
+        "crop": 3,
+        "dem_decimation": 1,
+        "dem_euclidean_map": false,
+        "dem_gapfill_steps": 3,
+        "dem_resolution": 5,
+        "dsm": false,
+        "dtm": false,
+        "end_with": "odm_postprocess",
+        "fast_orthophoto": true,
+        "feature_quality": "low",
+        "feature_type": "dspsift",
+        "force_gps": false,
+        "gcp": null,
+        "geo": "/datasets/parcela_01_re_work/geo.txt",
+        "gltf": false,
+        "gps_accuracy": 3,
+        "gps_z_offset": 0,
+        "ignore_gsd": false,
+        "matcher_neighbors": 6,
+        "matcher_order": 0,
+        "matcher_type": "flann",
+        "max_concurrency": 2,
+        "merge": "all",
+        "merge_skip_blending": false,
+        "mesh_octree_depth": 11,
+        "mesh_size": 200000,
+        "min_num_features": 10000,
+        "name": "parcela_01_re_work",
+        "no_gpu": false,
+        "optimize_disk_space": false,
+        "orthophoto_compression": "DEFLATE",
+        "orthophoto_cutline": false,
+        "orthophoto_kmz": false,
+        "orthophoto_no_tiled": false,
+        "orthophoto_png": false,
+        "orthophoto_resolution": 2.0,
+        "pc_classify": false,
+        "pc_copc": false,
+        "pc_csv": false,
+        "pc_ept": false,
+        "pc_filter": 5,
+        "pc_las": false,
+        "pc_quality": "low",
+        "pc_rectify": false,
+        "pc_sample": 0,
+        "pc_skip_geometric": false,
+        "primary_band": "auto",
+        "project_path": "/datasets/parcela_01_re_work",
+        "radiometric_calibration": "none",
+        "rerun": null,
+        "rerun_all": true,
+        "rerun_from": null,
+        "rolling_shutter": false,
+        "rolling_shutter_readout": 0,
+        "sfm_algorithm": "incremental",
+        "sfm_no_partial": false,
+        "skip_3dmodel": true,
+        "skip_band_alignment": false,
+        "skip_orthophoto": false,
+        "skip_report": false,
+        "sky_removal": false,
+        "sm_cluster": null,
+        "sm_no_align": false,
+        "smrf_scalar": 1.25,
+        "smrf_slope": 0.15,
+        "smrf_threshold": 0.5,
+        "smrf_window": 18.0,
+        "split": 999999,
+        "split_image_groups": null,
+        "split_overlap": 150,
+        "texturing_keep_unseen_faces": false,
+        "texturing_single_material": false,
+        "texturing_skip_global_seam_leveling": false,
+        "tiles": false,
+        "use_3dmesh": false,
+        "use_exif": false,
+        "use_fixed_camera_params": false,
+        "use_hybrid_bundle_adjustment": false,
+        "video_limit": 500,
+        "video_resolution": 4000
+    },
+    "startTime": "2026-03-08T22:48:00.732707",
+    "stages": [
+        {
+            "name": "dataset",
+            "startTime": "2026-03-08T22:48:02.472491",
+            "messages": [
+                {
+                    "message": "Running dataset stage",
+                    "type": "info"
+                },
+                {
+                    "message": "Loading dataset from: /datasets/parcela_01_re_work/images",
+                    "type": "info"
+                },
+                {
+                    "message": "Loading 227 images",
+                    "type": "info"
+                },
+                {
+                    "message": "Found image geolocation file",
+                    "type": "info"
+                },
+                {
+                    "message": "Updated 227 image positions",
+                    "type": "info"
+                },
+                {
+                    "message": "Wrote images database: /datasets/parcela_01_re_work/images.json",
+                    "type": "info"
+                },
+                {
+                    "message": "Found 227 usable images",
+                    "type": "info"
+                },
+                {
+                    "message": "Finished dataset stage",
+                    "type": "info"
+                }
+            ]
+        },
+        {
+            "name": "split",
+            "startTime": "2026-03-08T22:48:13.435458",
+            "messages": [
+                {
+                    "message": "Running split stage",
+                    "type": "info"
+                },
+                {
+                    "message": "Normal dataset, will process all at once.",
+                    "type": "info"
+                },
+                {
+                    "message": "Finished split stage",
+                    "type": "info"
+                }
+            ]
+        },
+        {
+            "name": "merge",
+            "startTime": "2026-03-08T22:48:13.444122",
+            "messages": [
+                {
+                    "message": "Running merge stage",
+                    "type": "info"
+                },
+                {
+                    "message": "Normal dataset, nothing to merge.",
+                    "type": "info"
+                },
+                {
+                    "message": "Finished merge stage",
+                    "type": "info"
+                }
+            ]
+        },
+        {
+            "name": "opensfm",
+            "startTime": "2026-03-08T22:48:13.451388",
+            "messages": [
+                {
+                    "message": "Running opensfm stage",
+                    "type": "info"
+                },
+                {
+                    "message": "Maximum photo dimensions: 2592px",
+                    "type": "info"
+                },
+                {
+                    "message": "Photo dimensions for feature extraction: 324px",
+                    "type": "info"
+                },
+                {
+                    "message": "Altitude data detected, enabling it for GPS alignment",
+                    "type": "info"
+                },
+                {
+                    "message": [
+                        "use_exif_size: no",
+                        "flann_algorithm: KDTREE",
+                        "feature_process_size: 324",
+                        "feature_min_frames: 10000",
+                        "processes: 2",
+                        "matching_gps_neighbors: 6",
+                        "matching_gps_distance: 0",
+                        "matching_graph_rounds: 0",
+                        "optimize_camera_parameters: yes",
+                        "reconstruction_algorithm: incremental",
+                        "undistorted_image_format: tif",
+                        "bundle_outlier_filtering_type: AUTO",
+                        "sift_peak_threshold: 0.066",
+                        "align_orientation_prior: vertical",
+                        "triangulation_type: ROBUST",
+                        "retriangulation_ratio: 2",
+                        "matcher_type: FLANN",
+                        "feature_type: DSPSIFT",
+                        "use_altitude_tag: yes",
+                        "align_method: auto",
+                        "local_bundle_radius: 0"
+                    ],
+                    "type": "info"
+                },
+                {
+                    "message": "Wrote reference_lla.json",
+                    "type": "info"
+                },
+                {
+                    "message": "running \"/code/SuperBuild/install/bin/opensfm/bin/opensfm\" detect_features \"/datasets/parcela_01_re_work/opensfm\"",
+                    "type": "info"
+                },
+                {
+                    "message": "running \"/code/SuperBuild/install/bin/opensfm/bin/opensfm\" match_features \"/datasets/parcela_01_re_work/opensfm\"",
+                    "type": "info"
+                },
+                {
+                    "message": "running \"/code/SuperBuild/install/bin/opensfm/bin/opensfm\" create_tracks \"/datasets/parcela_01_re_work/opensfm\"",
+                    "type": "info"
+                },
+                {
+                    "message": "running \"/code/SuperBuild/install/bin/opensfm/bin/opensfm\" reconstruct \"/datasets/parcela_01_re_work/opensfm\"",
+                    "type": "info"
+                },
+                {
+                    "message": "Multiple reconstructions detected (2), this might be an indicator that some areas did not have sufficient overlap",
+                    "type": "warning"
+                },
+                {
+                    "message": "Attempting merge",
+                    "type": "info"
+                },
+                {
+                    "message": "Merging reconstruction 0",
+                    "type": "info"
+                },
+                {
+                    "message": "Merging reconstruction 1",
+                    "type": "info"
+                },
+                {
+                    "message": "Export reconstruction stats",
+                    "type": "info"
+                },
+                {
+                    "message": "running \"/code/SuperBuild/install/bin/opensfm/bin/opensfm\" compute_statistics --diagram_max_points 100000 \"/datasets/parcela_01_re_work/opensfm\"",
+                    "type": "info"
+                },
+                {
+                    "message": "running \"/code/SuperBuild/install/bin/opensfm/bin/opensfm\" export_geocoords --reconstruction --proj \"+proj=utm +zone=14 +datum=WGS84 +units=m +no_defs +type=crs\" --offset-x 373792.0 --offset-y 2270934.0 \"/datasets/parcela_01_re_work/opensfm\"",
+                    "type": "info"
+                },
+                {
+                    "message": "Updating /datasets/parcela_01_re_work/opensfm/config.yaml",
+                    "type": "info"
+                },
+                {
+                    "message": "undistorted_image_max_size: 2592",
+                    "type": "info"
+                },
+                {
+                    "message": "Undistorting /datasets/parcela_01_re_work/opensfm ...",
+                    "type": "info"
+                },
+                {
+                    "message": "running \"/code/SuperBuild/install/bin/opensfm/bin/opensfm\" export_visualsfm --points \"/datasets/parcela_01_re_work/opensfm\"",
+                    "type": "info"
+                },
+                {
+                    "message": "running \"/code/SuperBuild/install/bin/opensfm/bin/opensfm\" export_ply --no-cameras --point-num-views \"/datasets/parcela_01_re_work/opensfm\"",
+                    "type": "info"
+                },
+                {
+                    "message": "Finished opensfm stage",
+                    "type": "info"
+                }
+            ]
+        },
+        {
+            "name": "odm_filterpoints",
+            "startTime": "2026-03-08T22:51:52.604752",
+            "messages": [
+                {
+                    "message": "Running odm_filterpoints stage",
+                    "type": "info"
+                },
+                {
+                    "message": "Filtering /datasets/parcela_01_re_work/opensfm/reconstruction.ply (statistical, meanK 16, standard deviation 5)",
+                    "type": "info"
+                },
+                {
+                    "message": "running \"/code/SuperBuild/install/bin/FPCFilter\" --input \"/datasets/parcela_01_re_work/opensfm/reconstruction.ply\" --output \"/datasets/parcela_01_re_work/odm_filterpoints/point_cloud.ply\" --concurrency 2 --meank 16 --std 5 --stats \"/datasets/parcela_01_re_work/odm_filterpoints/point_cloud_stats.json\"",
+                    "type": "info"
+                },
+                {
+                    "message": "Finished odm_filterpoints stage",
+                    "type": "info"
+                }
+            ]
+        },
+        {
+            "name": "odm_meshing",
+            "startTime": "2026-03-08T22:51:52.650163",
+            "messages": [
+                {
+                    "message": "Running odm_meshing stage",
+                    "type": "info"
+                },
+                {
+                    "message": "Writing ODM 2.5D Mesh file in: /datasets/parcela_01_re_work/odm_meshing/odm_25dmesh.ply",
+                    "type": "info"
+                },
+                {
+                    "message": "ODM 2.5D DSM resolution: 0.07",
+                    "type": "info"
+                },
+                {
+                    "message": "Created temporary directory: /datasets/parcela_01_re_work/odm_meshing/tmp",
+                    "type": "info"
+                },
+                {
+                    "message": "Creating DSM for 2.5D mesh",
+                    "type": "info"
+                },
+                {
+                    "message": "running renderdem \"/datasets/parcela_01_re_work/odm_filterpoints/point_cloud.ply\" --outdir \"/datasets/parcela_01_re_work/odm_meshing/tmp\" --output-type max --radiuses 0.10995574287564278,0.15550090283554285,0.21991148575128558 --resolution 0.56 --max-tiles 0 --decimation 1 --classification -1 --tile-size 4096 --force ",
+                    "type": "info"
+                },
+                {
+                    "message": "Generated 3 tiles",
+                    "type": "info"
+                },
+                {
+                    "message": "running gdalbuildvrt -input_file_list \"/datasets/parcela_01_re_work/odm_meshing/tmp/tiles_list.txt\" \"/datasets/parcela_01_re_work/odm_meshing/tmp/tiles.vrt\" ",
+                    "type": "info"
+                },
+                {
+                    "message": "running gdal_translate -co NUM_THREADS=2 -co BIGTIFF=IF_SAFER -co COMPRESS=DEFLATE --config GDAL_CACHEMAX 48.6% -outsize 10% 0 \"/datasets/parcela_01_re_work/odm_meshing/tmp/tiles.vrt\" \"/datasets/parcela_01_re_work/odm_meshing/tmp/tiles.small.tif\"",
+                    "type": "info"
+                },
+                {
+                    "message": "running gdalbuildvrt -resolution highest -r bilinear \"/datasets/parcela_01_re_work/odm_meshing/tmp/merged.vrt\" \"/datasets/parcela_01_re_work/odm_meshing/tmp/tiles.small_filled.tif\" \"/datasets/parcela_01_re_work/odm_meshing/tmp/tiles.vrt\"",
+                    "type": "info"
+                },
+                {
+                    "message": "running gdal_translate -co NUM_THREADS=2 -co TILED=YES -co BIGTIFF=IF_SAFER -co COMPRESS=DEFLATE --config GDAL_CACHEMAX 48.6% \"/datasets/parcela_01_re_work/odm_meshing/tmp/merged.vrt\" \"/datasets/parcela_01_re_work/odm_meshing/tmp/tiles.tif\"",
+                    "type": "info"
+                },
+                {
+                    "message": "running fastrasterfilter \"/datasets/parcela_01_re_work/odm_meshing/tmp/tiles.tif\" --output \"/datasets/parcela_01_re_work/odm_meshing/tmp/mesh_dsm.tif\" --window-size 512 --radius 4 --co TILED=YES --co BIGTIFF=IF_SAFER --co COMPRESS=DEFLATE ",
+                    "type": "info"
+                },
+                {
+                    "message": "Completed smoothing to create /datasets/parcela_01_re_work/odm_meshing/tmp/mesh_dsm.tif in 0:00:00.043816",
+                    "type": "info"
+                },
+                {
+                    "message": "Completed mesh_dsm.tif in 0:00:00.447854",
+                    "type": "info"
+                },
+                {
+                    "message": "Sampling points from DSM: /datasets/parcela_01_re_work/odm_meshing/tmp/mesh_dsm.tif",
+                    "type": "info"
+                },
+                {
+                    "message": "running \"/code/SuperBuild/install/bin/dem2points\" -inputFile \"/datasets/parcela_01_re_work/odm_meshing/tmp/mesh_dsm.tif\" -outputFile \"/datasets/parcela_01_re_work/odm_meshing/tmp/dsm_points.ply\" -skirtHeightThreshold 1.5 -skirtIncrements 0.2 -skirtHeightCap 100 -verbose ",
+                    "type": "info"
+                },
+                {
+                    "message": "running \"/code/SuperBuild/install/bin/PoissonRecon\" --in \"/datasets/parcela_01_re_work/odm_meshing/tmp/dsm_points.ply\" --out \"/datasets/parcela_01_re_work/odm_meshing/odm_25dmesh.dirty.ply\" --depth 11 --pointWeight 4 --samplesPerNode 1.0 --threads 1 --bType 2 --linearFit ",
+                    "type": "info"
+                },
+                {
+                    "message": "running \"/code/SuperBuild/install/bin/OpenMVS/ReconstructMesh\" -i \"/datasets/parcela_01_re_work/odm_meshing/odm_25dmesh.dirty.ply\" -o \"/datasets/parcela_01_re_work/odm_meshing/odm_25dmesh.ply\" --archive-type 3 --remove-spikes 0 --remove-spurious 20 --smooth 0 --target-face-num 400000 -v 0",
+                    "type": "info"
+                },
+                {
+                    "message": "Finished odm_meshing stage",
+                    "type": "info"
+                }
+            ]
+        },
+        {
+            "name": "mvs_texturing",
+            "startTime": "2026-03-08T22:51:57.726808",
+            "messages": [
+                {
+                    "message": "Running mvs_texturing stage",
+                    "type": "info"
+                },
+                {
+                    "message": "Writing MVS Textured file in: /datasets/parcela_01_re_work/odm_texturing_25d/odm_textured_model_geo.obj",
+                    "type": "info"
+                },
+                {
+                    "message": "running \"/code/SuperBuild/install/bin/texrecon\" \"/datasets/parcela_01_re_work/opensfm/undistorted/reconstruction.nvm\" \"/datasets/parcela_01_re_work/odm_meshing/odm_25dmesh.ply\" \"/datasets/parcela_01_re_work/odm_texturing_25d/odm_textured_model_geo\" -d gmi -o gauss_clamping -t none --no_intermediate_results   --nadir_mode  --num_threads=2 --max_texture_size=8192 ",
+                    "type": "info"
+                },
+                {
+                    "message": "Finished mvs_texturing stage",
+                    "type": "info"
+                }
+            ]
+        },
+        {
+            "name": "odm_georeferencing",
+            "startTime": "2026-03-08T22:53:10.932659",
+            "messages": [
+                {
+                    "message": "Running odm_georeferencing stage",
+                    "type": "info"
+                },
+                {
+                    "message": "Georeferencing point cloud",
+                    "type": "info"
+                },
+                {
+                    "message": "las scale calculated as the minimum of 1/10 estimated spacing or 0.001, which ever is less.",
+                    "type": "info"
+                },
+                {
+                    "message": "running pdal translate -i \"/datasets/parcela_01_re_work/odm_filterpoints/point_cloud.ply\" -o \"/datasets/parcela_01_re_work/odm_georeferencing/odm_georeferenced_model.laz\" ferry transformation --filters.ferry.dimensions=\"views => UserData\" --filters.transformation.matrix=\"1 0 0 373792.0 0 1 0 2270934.0 0 0 1 0 0 0 0 1\" --writers.las.offset_x=373792.0 --writers.las.offset_y=2270934.0 --writers.las.scale_x=0.001 --writers.las.scale_y=0.001 --writers.las.scale_z=0.001 --writers.las.offset_z=0 --writers.las.a_srs=\"+proj=utm +zone=14 +datum=WGS84 +units=m +no_defs +type=crs\"",
+                    "type": "info"
+                },
+                {
+                    "message": "Calculating cropping area and generating bounds shapefile from point cloud",
+                    "type": "info"
+                },
+                {
+                    "message": "running pdal translate -i \"/datasets/parcela_01_re_work/odm_georeferencing/odm_georeferenced_model.laz\" -o \"/datasets/parcela_01_re_work/odm_georeferencing/odm_georeferenced_model.decimated.las\" decimation --filters.decimation.step=4 ",
+                    "type": "info"
+                },
+                {
+                    "message": "running pdal info --boundary --filters.hexbin.edge_length=1 --filters.hexbin.threshold=1 \"/datasets/parcela_01_re_work/odm_georeferencing/odm_georeferenced_model.decimated.las\" > \"/datasets/parcela_01_re_work/odm_georeferencing/odm_georeferenced_model.boundary.json\"",
+                    "type": "info"
+                },
+                {
+                    "message": "running pdal info --summary \"/datasets/parcela_01_re_work/odm_georeferencing/odm_georeferenced_model.laz\" > \"/datasets/parcela_01_re_work/odm_georeferencing/odm_georeferenced_model.summary.json\"",
+                    "type": "info"
+                },
+                {
+                    "message": "running ogr2ogr -overwrite -f GPKG -a_srs \"+proj=utm +zone=14 +datum=WGS84 +units=m +no_defs\" /datasets/parcela_01_re_work/odm_georeferencing/odm_georeferenced_model.bounds.gpkg /datasets/parcela_01_re_work/odm_georeferencing/odm_georeferenced_model.bounds.geojson",
+                    "type": "info"
+                },
+                {
+                    "message": "Finished odm_georeferencing stage",
+                    "type": "info"
+                }
+            ]
+        },
+        {
+            "name": "odm_dem",
+            "startTime": "2026-03-08T22:53:11.314204",
+            "messages": [
+                {
+                    "message": "Running odm_dem stage",
+                    "type": "info"
+                },
+                {
+                    "message": "Create DSM: False",
+                    "type": "info"
+                },
+                {
+                    "message": "Create DTM: False",
+                    "type": "info"
+                },
+                {
+                    "message": "DEM input file /datasets/parcela_01_re_work/odm_georeferencing/odm_georeferenced_model.laz found: True",
+                    "type": "info"
+                },
+                {
+                    "message": "DEM will not be generated",
+                    "type": "warning"
+                },
+                {
+                    "message": "Finished odm_dem stage",
+                    "type": "info"
+                }
+            ]
+        },
+        {
+            "name": "odm_orthophoto",
+            "startTime": "2026-03-08T22:53:11.322753",
+            "messages": [
+                {
+                    "message": "Running odm_orthophoto stage",
+                    "type": "info"
+                },
+                {
+                    "message": "Creating GeoTIFF",
+                    "type": "info"
+                },
+                {
+                    "message": "running \"/code/SuperBuild/install/bin/odm_orthophoto\" -inputFiles /datasets/parcela_01_re_work/odm_texturing_25d/odm_textured_model_geo.obj -logFile \"/datasets/parcela_01_re_work/odm_orthophoto/odm_orthophoto_log.txt\" -outputFile \"/datasets/parcela_01_re_work/odm_orthophoto/odm_orthophoto.tif\" -resolution 50.0 -verbose -outputCornerFile \"/datasets/parcela_01_re_work/odm_orthophoto/odm_orthophoto_corners.txt\"   -inpaintThreshold 1.0 -utm_north_offset 2270934.0 -utm_east_offset 373792.0 -a_srs \"+proj=utm +zone=14 +datum=WGS84 +units=m +no_defs +type=crs\" -co TILED=YES -co COMPRESS=DEFLATE -co PREDICTOR=2 -co BIGTIFF=IF_SAFER -co BLOCKXSIZE=512 -co BLOCKYSIZE=512 -co NUM_THREADS=2 --config GDAL_CACHEMAX 20377808896.0 ",
+                    "type": "info"
+                },
+                {
+                    "message": "Cropping /datasets/parcela_01_re_work/odm_orthophoto/odm_orthophoto.tif",
+                    "type": "info"
+                },
+                {
+                    "message": "running gdalwarp -cutline /datasets/parcela_01_re_work/odm_georeferencing/odm_georeferenced_model.bounds.gpkg -crop_to_cutline -co TILED=YES -co COMPRESS=DEFLATE -co PREDICTOR=2 -co BIGTIFF=IF_SAFER -co BLOCKXSIZE=512 -co BLOCKYSIZE=512 -co NUM_THREADS=2 -dstalpha /datasets/parcela_01_re_work/odm_orthophoto/odm_orthophoto.original.tif /datasets/parcela_01_re_work/odm_orthophoto/odm_orthophoto.tif --config GDAL_CACHEMAX 48.6%",
+                    "type": "info"
+                },
+                {
+                    "message": "Adding TIFFTAGs to /datasets/parcela_01_re_work/odm_orthophoto/odm_orthophoto.tif",
+                    "type": "info"
+                },
+                {
+                    "message": "Wrote /datasets/parcela_01_re_work/odm_orthophoto/odm_orthophoto_extent.dxf",
+                    "type": "info"
+                },
+                {
+                    "message": "Wrote /datasets/parcela_01_re_work/odm_orthophoto/odm_orthophoto.tfw",
+                    "type": "info"
+                },
+                {
+                    "message": "Finished odm_orthophoto stage",
+                    "type": "info"
+                }
+            ]
+        },
+        {
+            "name": "odm_report",
+            "startTime": "2026-03-08T22:53:14.570619",
+            "messages": [
+                {
+                    "message": "Running odm_report stage",
+                    "type": "info"
+                },
+                {
+                    "message": "Exporting shots.geojson",
+                    "type": "info"
+                },
+                {
+                    "message": "Wrote /datasets/parcela_01_re_work/odm_report/shots.geojson",
+                    "type": "info"
+                },
+                {
+                    "message": "Copied /datasets/parcela_01_re_work/opensfm/camera_mappings.npz --> /datasets/parcela_01_re_work/odm_report/camera_mappings.npz",
+                    "type": "info"
+                },
+                {
+                    "message": "running pdal info --dimensions \"X,Y,Z\" \"/datasets/parcela_01_re_work/odm_georeferencing/odm_georeferenced_model.laz\" > \"/datasets/parcela_01_re_work/odm_georeferencing/odm_georeferenced_model.info.json\"",
+                    "type": "info"
+                },
+                {
+                    "message": "running pdal translate -i \"/datasets/parcela_01_re_work/odm_georeferencing/odm_georeferenced_model.laz\" -o \"/datasets/parcela_01_re_work/opensfm/stats/overlap.tif\" --writer gdal --writers.gdal.resolution=0.07559142857158024 --writers.gdal.data_type=uint8_t --writers.gdal.dimension=UserData --writers.gdal.output_type=max --writers.gdal.radius=1.0690242348508585 ",
+                    "type": "info"
+                },
+                {
+                    "message": "Cropping /datasets/parcela_01_re_work/opensfm/stats/overlap.tif",
+                    "type": "info"
+                },
+                {
+                    "message": "running gdalwarp -cutline /datasets/parcela_01_re_work/odm_georeferencing/odm_georeferenced_model.bounds.gpkg -crop_to_cutline -co TILED=YES -co COMPRESS=DEFLATE -co PREDICTOR=2 -co BIGTIFF=IF_SAFER -co BLOCKXSIZE=512 -co BLOCKYSIZE=512 -co NUM_THREADS=2  /datasets/parcela_01_re_work/opensfm/stats/overlap.original.tif /datasets/parcela_01_re_work/opensfm/stats/overlap.tif --config GDAL_CACHEMAX 48.6%",
+                    "type": "info"
+                },
+                {
+                    "message": "running gdaldem color-relief \"/datasets/parcela_01_re_work/opensfm/stats/overlap.tif\" \"/code/opendm/report/overlap_color_map.txt\" \"/datasets/parcela_01_re_work/opensfm/stats/overlap.png\" -of PNG -alpha",
+                    "type": "info"
+                },
+                {
+                    "message": "running gdal_translate -of png \"/datasets/parcela_01_re_work/odm_orthophoto/odm_orthophoto.tif\" \"/datasets/parcela_01_re_work/opensfm/stats/ortho.png\" -b 1 -b 2 -ot Byte -scale_1 -outsize 1400 0 -co WORLDFILE=YES --config GDAL_CACHEMAX 48.6% ",
+                    "type": "info"
+                },
+                {
+                    "message": "Exporting report to /datasets/parcela_01_re_work/odm_report/report.pdf",
+                    "type": "info"
+                },
+                {
+                    "message": "Finished odm_report stage",
+                    "type": "info"
+                }
+            ]
+        },
+        {
+            "name": "odm_postprocess",
+            "startTime": "2026-03-08T22:53:17.220704",
+            "messages": [
+                {
+                    "message": "Running odm_postprocess stage",
+                    "type": "info"
+                },
+                {
+                    "message": "Post Processing",
+                    "type": "info"
+                },
+                {
+                    "message": "Finished odm_postprocess stage",
+                    "type": "info"
+                },
+                {
+                    "message": "No more stages to run",
+                    "type": "info"
+                }
+            ],
+            "endTime": "2026-03-08T22:53:17.229131",
+            "totalTime": 0.01
+        }
+    ],
+    "processes": [
+        {
+            "command": "\"/code/SuperBuild/install/bin/opensfm/bin/opensfm\" detect_features \"/datasets/parcela_01_re_work/opensfm\"",
+            "exitCode": 0,
+            "output": [
+                "2026-03-08 22:49:52,552 DEBUG: Found 162 points in 0.07861161231994629s",
+                "2026-03-08 22:49:52,904 INFO: Reading data for image DJI_20260206134602_0004_MS_RE.TIF (queue-size=1)",
+                "2026-03-08 22:49:52,907 INFO: Extracting ROOT_DSPSIFT features for image DJI_20260206134600_0003_MS_RE.TIF",
+                "2026-03-08 22:49:52,988 DEBUG: Found 142 points in 0.06918764114379883s",
+                "2026-03-08 22:49:53,344 INFO: Reading data for image DJI_20260206134604_0005_MS_RE.TIF (queue-size=1)",
+                "2026-03-08 22:49:53,348 INFO: Extracting ROOT_DSPSIFT features for image DJI_20260206134602_0004_MS_RE.TIF",
+                "2026-03-08 22:49:53,432 DEBUG: Found 152 points in 0.07295799255371094s",
+                "2026-03-08 22:49:53,771 INFO: Finished reading images",
+                "2026-03-08 22:49:53,777 INFO: Extracting ROOT_DSPSIFT features for image DJI_20260206134604_0005_MS_RE.TIF",
+                "2026-03-08 22:49:53,852 DEBUG: Found 144 points in 0.06699991226196289s"
+            ]
+        },
+        {
+            "command": "\"/code/SuperBuild/install/bin/opensfm/bin/opensfm\" match_features \"/datasets/parcela_01_re_work/opensfm\"",
+            "exitCode": 0,
+            "output": [
+                "2026-03-08 22:49:57,799 DEBUG: Matching DJI_20260206133422_0202_MS_RE.TIF and DJI_20260206133429_0204_MS_RE.TIF.  Matcher: FLANN (symmetric) T-desc: 0.002 T-robust: 0.000 T-total: 0.002 Matches: 92 Robust: 91 Success: True",
+                "2026-03-08 22:49:57,801 DEBUG: Matching DJI_20260206132819_0086_MS_RE.TIF and DJI_20260206132813_0084_MS_RE.TIF.  Matcher: FLANN (symmetric) T-desc: 0.002 T-robust: 0.000 T-total: 0.002 Matches: 116 Robust: 115 Success: True",
+                "2026-03-08 22:49:57,804 DEBUG: Matching DJI_20260206132512_0030_MS_RE.TIF and DJI_20260206132520_0032_MS_RE.TIF.  Matcher: FLANN (symmetric) T-desc: 0.002 T-robust: 0.000 T-total: 0.003 Matches: 119 Robust: 116 Success: True",
+                "2026-03-08 22:49:57,806 DEBUG: Matching DJI_20260206133453_0208_MS_RE.TIF and DJI_20260206133429_0204_MS_RE.TIF.  Matcher: FLANN (symmetric) T-desc: 0.002 Matches: FAILED",
+                "2026-03-08 22:49:57,807 DEBUG: Matching DJI_20260206133516_0217_MS_RE.TIF and DJI_20260206133519_0218_MS_RE.TIF.  Matcher: FLANN (symmetric) T-desc: 0.009 T-robust: 0.000 T-total: 0.009 Matches: 62 Robust: 59 Success: True",
+                "2026-03-08 22:49:57,813 DEBUG: Matching DJI_20260206133002_0120_MS_RE.TIF and DJI_20260206133008_0122_MS_RE.TIF.  Matcher: FLANN (symmetric) T-desc: 0.006 Matches: FAILED",
+                "2026-03-08 22:49:57,815 DEBUG: Matching DJI_20260206133236_0168_MS_RE.TIF and DJI_20260206133239_0169_MS_RE.TIF.  Matcher: FLANN (symmetric) T-desc: 0.001 T-robust: 0.000 T-total: 0.001 Matches: 42 Robust: 41 Success: True",
+                "2026-03-08 22:49:57,816 DEBUG: Matching DJI_20260206132537_0037_MS_RE.TIF and DJI_20260206132526_0034_MS_RE.TIF.  Matcher: FLANN (symmetric) T-desc: 0.009 T-robust: 0.000 T-total: 0.010 Matches: 79 Robust: 77 Success: True",
+                "2026-03-08 22:49:57,823 DEBUG: Matching DJI_20260206133126_0145_MS_RE.TIF and DJI_20260206133121_0144_MS_RE.TIF.  Matcher: FLANN (symmetric) T-desc: 0.008 T-robust: 0.000 T-total: 0.008 Matches: 112 Robust: 111 Success: True",
+                "2026-03-08 22:49:57,825 INFO: Matched 767 pairs (perspective-perspective: 767) in 1.8471968070000457 seconds (0.0024083405880053576 seconds/pair)."
+            ]
+        },
+        {
+            "command": "\"/code/SuperBuild/install/bin/opensfm/bin/opensfm\" create_tracks \"/datasets/parcela_01_re_work/opensfm\"",
+            "exitCode": 0,
+            "output": [
+                "2026-03-08 22:50:00,392 INFO: reading features",
+                "2026-03-08 22:50:02,313 DEBUG: Merging features onto tracks",
+                "2026-03-08 22:50:02,428 DEBUG: Good tracks: 4186"
+            ]
+        },
+        {
+            "command": "\"/code/SuperBuild/install/bin/opensfm/bin/opensfm\" reconstruct \"/datasets/parcela_01_re_work/opensfm\"",
+            "exitCode": 0,
+            "output": [
+                "2026-03-08 22:50:12,952 INFO: DJI_20260206133004_0121_MS_RE.TIF resection inliers: 4 / 7",
+                "2026-03-08 22:50:12,972 INFO: DJI_20260206132955_0118_MS_RE.TIF resection inliers: 4 / 5",
+                "2026-03-08 22:50:13,006 INFO: Some images can not be added",
+                "2026-03-08 22:50:13,006 INFO: -------------------------------------------------------",
+                "2026-03-08 22:50:13,009 INFO: Shots and/or GCPs are well-conditioned. Using naive 3D-3D alignment.",
+                "2026-03-08 22:50:14,211 DEBUG: Ceres Solver Report: Iterations: 39, Initial cost: 7.097151e+01, Final cost: 5.287611e+01, Termination: CONVERGENCE",
+                "2026-03-08 22:50:14,242 INFO: Removed outliers: 12",
+                "2026-03-08 22:50:14,262 INFO: Reconstruction 0: 185 images, 3329 points",
+                "2026-03-08 22:50:14,262 INFO: Reconstruction 1: 16 images, 304 points",
+                "2026-03-08 22:50:14,262 INFO: 2 partial reconstructions in total."
+            ]
+        },
+        {
+            "command": "\"/code/SuperBuild/install/bin/opensfm/bin/opensfm\" compute_statistics --diagram_max_points 100000 \"/datasets/parcela_01_re_work/opensfm\"",
+            "exitCode": 0,
+            "output": [
+                "2026-03-08 22:50:19,775 DEBUG: Loaded backend agg version v2.2.",
+                "2026-03-08 22:50:19,788 DEBUG: locator: <matplotlib.ticker.AutoLocator object at 0x7fecece976b0>",
+                "2026-03-08 22:50:20,486 DEBUG: locator: <matplotlib.ticker.AutoLocator object at 0x7fececde16a0>"
+            ]
+        },
+        {
+            "command": "\"/code/SuperBuild/install/bin/opensfm/bin/opensfm\" export_geocoords --reconstruction --proj \"+proj=utm +zone=14 +datum=WGS84 +units=m +no_defs +type=crs\" --offset-x 373792.0 --offset-y 2270934.0 \"/datasets/parcela_01_re_work/opensfm\"",
+            "exitCode": 0
+        },
+        {
+            "command": "\"/code/SuperBuild/install/bin/opensfm/bin/opensfm\" export_visualsfm --points \"/datasets/parcela_01_re_work/opensfm\"",
+            "exitCode": 0
+        },
+        {
+            "command": "\"/code/SuperBuild/install/bin/opensfm/bin/opensfm\" export_ply --no-cameras --point-num-views \"/datasets/parcela_01_re_work/opensfm\"",
+            "exitCode": 0
+        },
+        {
+            "command": "\"/code/SuperBuild/install/bin/FPCFilter\" --input \"/datasets/parcela_01_re_work/opensfm/reconstruction.ply\" --output \"/datasets/parcela_01_re_work/odm_filterpoints/point_cloud.ply\" --concurrency 2 --meank 16 --std 5 --stats \"/datasets/parcela_01_re_work/odm_filterpoints/point_cloud_stats.json\"",
+            "exitCode": 0,
+            "output": [
+                "-> Spacing estimation completed (0.07 meters)",
+                "",
+                "?> Done in 0.01615s",
+                "",
+                "-> Writing output",
+                "",
+                "?> Done in 0.006342s",
+                "",
+                "?> Pipeline done in 0.02255s",
+                ""
+            ]
+        },
+        {
+            "command": "renderdem \"/datasets/parcela_01_re_work/odm_filterpoints/point_cloud.ply\" --outdir \"/datasets/parcela_01_re_work/odm_meshing/tmp\" --output-type max --radiuses 0.10995574287564278,0.15550090283554285,0.21991148575128558 --resolution 0.56 --max-tiles 0 --decimation 1 --classification -1 --tile-size 4096 --force ",
+            "exitCode": 0,
+            "output": [
+                "Reading 3629 points",
+                "Point cloud bounds are [minx: -35.4332580566, maxx: 51.8240432739, miny: -31.5181331635, maxy: 74.3099441528]",
+                "DEM resolution is (156, 189), max tile size is 4096, will split DEM generation into 1 tiles",
+                "r0.109956_x0_y0.tif",
+                "r0.219911_x0_y0.tif",
+                "r0.155501_x0_y0.tif"
+            ]
+        },
+        {
+            "command": "gdalbuildvrt -input_file_list \"/datasets/parcela_01_re_work/odm_meshing/tmp/tiles_list.txt\" \"/datasets/parcela_01_re_work/odm_meshing/tmp/tiles.vrt\" ",
+            "exitCode": 0,
+            "output": [
+                "0...10...20...30...40...50...60...70...80...90...100 - done."
+            ]
+        },
+        {
+            "command": "gdal_translate -co NUM_THREADS=2 -co BIGTIFF=IF_SAFER -co COMPRESS=DEFLATE --config GDAL_CACHEMAX 48.6% -outsize 10% 0 \"/datasets/parcela_01_re_work/odm_meshing/tmp/tiles.vrt\" \"/datasets/parcela_01_re_work/odm_meshing/tmp/tiles.small.tif\"",
+            "exitCode": 0,
+            "output": [
+                "Input file size is 156, 189",
+                "0...10...20...30...40...50...60...70...80...90...100 - done."
+            ]
+        },
+        {
+            "command": "gdalbuildvrt -resolution highest -r bilinear \"/datasets/parcela_01_re_work/odm_meshing/tmp/merged.vrt\" \"/datasets/parcela_01_re_work/odm_meshing/tmp/tiles.small_filled.tif\" \"/datasets/parcela_01_re_work/odm_meshing/tmp/tiles.vrt\"",
+            "exitCode": 0,
+            "output": [
+                "0...10...20...30...40...50...60...70...80...90...100 - done."
+            ]
+        },
+        {
+            "command": "gdal_translate -co NUM_THREADS=2 -co TILED=YES -co BIGTIFF=IF_SAFER -co COMPRESS=DEFLATE --config GDAL_CACHEMAX 48.6% \"/datasets/parcela_01_re_work/odm_meshing/tmp/merged.vrt\" \"/datasets/parcela_01_re_work/odm_meshing/tmp/tiles.tif\"",
+            "exitCode": 0,
+            "output": [
+                "Input file size is 156, 189",
+                "0...10...20...30...40...50...60...70...80...90...100 - done."
+            ]
+        },
+        {
+            "command": "fastrasterfilter \"/datasets/parcela_01_re_work/odm_meshing/tmp/tiles.tif\" --output \"/datasets/parcela_01_re_work/odm_meshing/tmp/mesh_dsm.tif\" --window-size 512 --radius 4 --co TILED=YES --co BIGTIFF=IF_SAFER --co COMPRESS=DEFLATE ",
+            "exitCode": 0,
+            "output": [
+                "Input: /datasets/parcela_01_re_work/odm_meshing/tmp/tiles.tif",
+                "Size: 156x189",
+                "Blocks: 1",
+                "Smoothing...1... done",
+                "Wrote /datasets/parcela_01_re_work/odm_meshing/tmp/mesh_dsm.tif"
+            ]
+        },
+        {
+            "command": "\"/code/SuperBuild/install/bin/dem2points\" -inputFile \"/datasets/parcela_01_re_work/odm_meshing/tmp/mesh_dsm.tif\" -outputFile \"/datasets/parcela_01_re_work/odm_meshing/tmp/dsm_points.ply\" -skirtHeightThreshold 1.5 -skirtIncrements 0.2 -skirtHeightCap 100 -verbose ",
+            "exitCode": 0,
+            "output": [
+                "--skirtHeightThreshold 1.500000",
+                "--skirtIncrements 0.200000",
+                "--skirtHeightCap 100.000000",
+                "--verbose",
+                "Raster Size is 156x189",
+                "Extent is (-35.433258, 51.926742), (-31.518133, 74.321867)",
+                "Read nodata value: -9999",
+                "Calculating skirts and vertex count... 0 skirt points will be added",
+                "Total vertices: 28120",
+                "Sampling and writing to file... done!"
+            ]
+        },
+        {
+            "command": "\"/code/SuperBuild/install/bin/PoissonRecon\" --in \"/datasets/parcela_01_re_work/odm_meshing/tmp/dsm_points.ply\" --out \"/datasets/parcela_01_re_work/odm_meshing/odm_25dmesh.dirty.ply\" --depth 11 --pointWeight 4 --samplesPerNode 1.0 --threads 1 --bType 2 --linearFit ",
+            "exitCode": 0
+        },
+        {
+            "command": "\"/code/SuperBuild/install/bin/OpenMVS/ReconstructMesh\" -i \"/datasets/parcela_01_re_work/odm_meshing/odm_25dmesh.dirty.ply\" -o \"/datasets/parcela_01_re_work/odm_meshing/odm_25dmesh.ply\" --archive-type 3 --remove-spikes 0 --remove-spurious 20 --smooth 0 --target-face-num 400000 -v 0",
+            "exitCode": 0,
+            "output": [
+                "22:51:57 [App     ] CPU: 11th Gen Intel(R) Core(TM) i7-11800H @ 2.30GHz (12 cores)",
+                "22:51:57 [App     ] RAM: 39.17GB Physical Memory 12.00GB Virtual Memory",
+                "22:51:57 [App     ] OS: Linux 6.6.87.2-microsoft-standard-WSL2 (x86_64)",
+                "22:51:57 [App     ] Disk:",
+                "22:51:57 [App     ] SSE & AVX compatible CPU & OS detected",
+                "22:51:57 [App     ] Command line: ReconstructMesh -i /datasets/parcela_01_re_work/odm_meshing/odm_25dmesh.dirty.ply -o /datasets/parcela_01_re_work/odm_meshing/odm_25dmesh.ply --archive-type 3 --remove-spikes 0 --remove-spurious 20 --smooth 0 --target-face-num 400000 -v 0",
+                "22:51:57 [App     ] MEMORYINFO: {",
+                "22:51:57 [App     ] \tVmPeak:\t  103340 kB",
+                "22:51:57 [App     ] \tVmSize:\t   67536 kB",
+                "22:51:57 [App     ] } ENDINFO"
+            ]
+        },
+        {
+            "command": "\"/code/SuperBuild/install/bin/texrecon\" \"/datasets/parcela_01_re_work/opensfm/undistorted/reconstruction.nvm\" \"/datasets/parcela_01_re_work/odm_meshing/odm_25dmesh.ply\" \"/datasets/parcela_01_re_work/odm_texturing_25d/odm_textured_model_geo\" -d gmi -o gauss_clamping -t none --no_intermediate_results   --nadir_mode  --num_threads=2 --max_texture_size=8192 ",
+            "exitCode": 0,
+            "output": [
+                "",
+                "Blending texture patches 100%... done. (Took 18.305s)",
+                "Generating texture atlases:",
+                "Sorting texture patches... done.",
+                "",
+                "Working on atlas 7 100%... done.",
+                "Finalizing texture atlases... done. (Took: 0s)",
+                "Building objmodel:",
+                "Saving model... done.",
+                "Whole texturing procedure took: 73.107s"
+            ]
+        },
+        {
+            "command": "pdal translate -i \"/datasets/parcela_01_re_work/odm_filterpoints/point_cloud.ply\" -o \"/datasets/parcela_01_re_work/odm_georeferencing/odm_georeferenced_model.laz\" ferry transformation --filters.ferry.dimensions=\"views => UserData\" --filters.transformation.matrix=\"1 0 0 373792.0 0 1 0 2270934.0 0 0 1 0 0 0 0 1\" --writers.las.offset_x=373792.0 --writers.las.offset_y=2270934.0 --writers.las.scale_x=0.001 --writers.las.scale_y=0.001 --writers.las.scale_z=0.001 --writers.las.offset_z=0 --writers.las.a_srs=\"+proj=utm +zone=14 +datum=WGS84 +units=m +no_defs +type=crs\"",
+            "exitCode": 0
+        },
+        {
+            "command": "pdal translate -i \"/datasets/parcela_01_re_work/odm_georeferencing/odm_georeferenced_model.laz\" -o \"/datasets/parcela_01_re_work/odm_georeferencing/odm_georeferenced_model.decimated.las\" decimation --filters.decimation.step=4 ",
+            "exitCode": 0
+        },
+        {
+            "command": "pdal info --boundary --filters.hexbin.edge_length=1 --filters.hexbin.threshold=1 \"/datasets/parcela_01_re_work/odm_georeferencing/odm_georeferenced_model.decimated.las\" > \"/datasets/parcela_01_re_work/odm_georeferencing/odm_georeferenced_model.boundary.json\"",
+            "exitCode": 0
+        },
+        {
+            "command": "pdal info --summary \"/datasets/parcela_01_re_work/odm_georeferencing/odm_georeferenced_model.laz\" > \"/datasets/parcela_01_re_work/odm_georeferencing/odm_georeferenced_model.summary.json\"",
+            "exitCode": 0
+        },
+        {
+            "command": "ogr2ogr -overwrite -f GPKG -a_srs \"+proj=utm +zone=14 +datum=WGS84 +units=m +no_defs\" /datasets/parcela_01_re_work/odm_georeferencing/odm_georeferenced_model.bounds.gpkg /datasets/parcela_01_re_work/odm_georeferencing/odm_georeferenced_model.bounds.geojson",
+            "exitCode": 0
+        },
+        {
+            "command": "\"/code/SuperBuild/install/bin/odm_orthophoto\" -inputFiles /datasets/parcela_01_re_work/odm_texturing_25d/odm_textured_model_geo.obj -logFile \"/datasets/parcela_01_re_work/odm_orthophoto/odm_orthophoto_log.txt\" -outputFile \"/datasets/parcela_01_re_work/odm_orthophoto/odm_orthophoto.tif\" -resolution 50.0 -verbose -outputCornerFile \"/datasets/parcela_01_re_work/odm_orthophoto/odm_orthophoto_corners.txt\"   -inpaintThreshold 1.0 -utm_north_offset 2270934.0 -utm_east_offset 373792.0 -a_srs \"+proj=utm +zone=14 +datum=WGS84 +units=m +no_defs +type=crs\" -co TILED=YES -co COMPRESS=DEFLATE -co PREDICTOR=2 -co BIGTIFF=IF_SAFER -co BLOCKXSIZE=512 -co BLOCKYSIZE=512 -co NUM_THREADS=2 --config GDAL_CACHEMAX 20377808896.0 ",
+            "exitCode": 0,
+            "output": [
+                "Set GDAL_CACHEMAX to 20377808896",
+                "Set TILED=YES",
+                "Set COMPRESS=DEFLATE",
+                "Set PREDICTOR=2",
+                "Set BIGTIFF=IF_SAFER",
+                "Set BLOCKXSIZE=512",
+                "Set BLOCKYSIZE=512",
+                "Set NUM_THREADS=2",
+                "Writing corner coordinates to /datasets/parcela_01_re_work/odm_orthophoto/odm_orthophoto_corners.txt",
+                "Orthophoto generation done."
+            ]
+        },
+        {
+            "command": "gdalwarp -cutline /datasets/parcela_01_re_work/odm_georeferencing/odm_georeferenced_model.bounds.gpkg -crop_to_cutline -co TILED=YES -co COMPRESS=DEFLATE -co PREDICTOR=2 -co BIGTIFF=IF_SAFER -co BLOCKXSIZE=512 -co BLOCKYSIZE=512 -co NUM_THREADS=2 -dstalpha /datasets/parcela_01_re_work/odm_orthophoto/odm_orthophoto.original.tif /datasets/parcela_01_re_work/odm_orthophoto/odm_orthophoto.tif --config GDAL_CACHEMAX 48.6%",
+            "exitCode": 0,
+            "output": [
+                "Using band 2 of source image as alpha.",
+                "Creating output file that is 2793P x 2757L.",
+                "Processing /datasets/parcela_01_re_work/odm_orthophoto/odm_orthophoto.original.tif [1/1] : 0...10...20...30...40...50...60...70...80...90...100 - done."
+            ]
+        },
+        {
+            "command": "pdal info --dimensions \"X,Y,Z\" \"/datasets/parcela_01_re_work/odm_georeferencing/odm_georeferenced_model.laz\" > \"/datasets/parcela_01_re_work/odm_georeferencing/odm_georeferenced_model.info.json\"",
+            "exitCode": 0
+        },
+        {
+            "command": "pdal translate -i \"/datasets/parcela_01_re_work/odm_georeferencing/odm_georeferenced_model.laz\" -o \"/datasets/parcela_01_re_work/opensfm/stats/overlap.tif\" --writer gdal --writers.gdal.resolution=0.07559142857158024 --writers.gdal.data_type=uint8_t --writers.gdal.dimension=UserData --writers.gdal.output_type=max --writers.gdal.radius=1.0690242348508585 ",
+            "exitCode": 0
+        },
+        {
+            "command": "gdalwarp -cutline /datasets/parcela_01_re_work/odm_georeferencing/odm_georeferenced_model.bounds.gpkg -crop_to_cutline -co TILED=YES -co COMPRESS=DEFLATE -co PREDICTOR=2 -co BIGTIFF=IF_SAFER -co BLOCKXSIZE=512 -co BLOCKYSIZE=512 -co NUM_THREADS=2  /datasets/parcela_01_re_work/opensfm/stats/overlap.original.tif /datasets/parcela_01_re_work/opensfm/stats/overlap.tif --config GDAL_CACHEMAX 48.6%",
+            "exitCode": 0,
+            "output": [
+                "Creating output file that is 738P x 728L.",
+                "Processing /datasets/parcela_01_re_work/opensfm/stats/overlap.original.tif [1/1] : 0Using internal nodata values (e.g. 255) for image /datasets/parcela_01_re_work/opensfm/stats/overlap.original.tif.",
+                "Copying nodata values from source /datasets/parcela_01_re_work/opensfm/stats/overlap.original.tif to destination /datasets/parcela_01_re_work/opensfm/stats/overlap.tif.",
+                "...10...20...30...40...50...60...70...80...90...100 - done."
+            ]
+        },
+        {
+            "command": "gdaldem color-relief \"/datasets/parcela_01_re_work/opensfm/stats/overlap.tif\" \"/code/opendm/report/overlap_color_map.txt\" \"/datasets/parcela_01_re_work/opensfm/stats/overlap.png\" -of PNG -alpha",
+            "exitCode": 0,
+            "output": [
+                "0...10...20...30...40...50...60...70...80...90...100 - done."
+            ]
+        },
+        {
+            "command": "gdal_translate -of png \"/datasets/parcela_01_re_work/odm_orthophoto/odm_orthophoto.tif\" \"/datasets/parcela_01_re_work/opensfm/stats/ortho.png\" -b 1 -b 2 -ot Byte -scale_1 -outsize 1400 0 -co WORLDFILE=YES --config GDAL_CACHEMAX 48.6% ",
+            "exitCode": 0,
+            "output": [
+                "Input file size is 2793, 2757",
+                "0...10...20...30...40...50...60...70...80...90...100 - done."
+            ]
+        }
+    ],
+    "success": true,
+    "endTime": "2026-03-08T22:53:17.229131",
+    "totalTime": 316.5
+}

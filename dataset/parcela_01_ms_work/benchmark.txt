@@ -1,0 +1,6 @@
+ODM Benchmarking file created Sun Mar 08 21:57:58  2026
+Number of Cores: 12
+
+dataset runtime: 34.770136 seconds
+split runtime: 0.001217 seconds
+merge runtime: 3.9e-05 seconds

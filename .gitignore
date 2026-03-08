@@ -1,18 +1,35 @@
-# drone images
+# imágenes crudas
 dataset/**/images/
 
-# ODM outputs
-dataset/**/odm_*
+# outputs de ODM
+dataset/**/opensfm/
+dataset/**/odm_*/
+dataset/**/odm_dem/
+dataset/**/odm_orthophoto/
+dataset/**/odm_georeferencing/
+dataset/**/odm_meshing/
+dataset/**/odm_texturing/
+dataset/**/odm_filterpoints/
 
-# orthomosaics
+# archivos pesados y auxiliares
 *.tif
-
-# logs
+*.tiff
+*.las
+*.laz
+*.ply
 *.log
+*.aux.xml
+*.wld
+*.nvm
+*.npz
+*.png
+*.jpg
+*.jpeg
+*.exif
 
-# python cache
+# reportes intermedios
+dataset/**/reports/
+dataset/**/stats/
+
+# cache
 __pycache__/
-
-# system
-.DS_Store
-Thumbs.db
