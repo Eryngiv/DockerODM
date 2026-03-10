@@ -1,3 +1,4 @@
 # DockerODM
 
-Pipeline reproducible para reconstrucción de ortomosaicos con Docker y OpenDroneMap.
+Pipeline para reconstrucción de ortomosaicos 
+Tania (:
